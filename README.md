@@ -7,6 +7,7 @@ Application ***_symfony test_***
 
 ## Comment exporter les produits en csv :
 `cd infra && docker-compose run php php bin/console app:export_products csv && cd ..`
+Ou executer le script `export.sh`
 
 ### Indications
 - [x] L’application propose 12 produits au total.
