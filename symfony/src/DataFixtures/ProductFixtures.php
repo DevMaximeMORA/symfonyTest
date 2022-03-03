@@ -34,10 +34,10 @@ class ProductFixtures extends Fixture
             // $product->setSlug($this->slugger->slug($product->getName()));
             //FAKER_BUG
 
-            $product->setName("Nom du produit");
-            $product->setDescription("Lorem");
-            $product->setPrice(10);
-            $product->setSlug("nom-du-produit");
+            $product->setName("Nom du produit ".$i+1);
+            $product->setDescription("Lorem ipsum dolor sit amet.");
+            $product->setPrice(rand(1, 50));
+            $product->setSlug("nom-du-produit-".$i);
             $manager->persist($product);
         }
 
