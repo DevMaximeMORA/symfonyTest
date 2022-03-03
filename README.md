@@ -18,7 +18,7 @@ Application ***_symfony test_***
 ### Ecrans
 
  - [x] Page d’accueil : afficher la totalité des produits ordonnes par nom, un bouton “voir la fiche” permet d’aller sur la page de détails du produit.
- - [ ] Page de détails d’un produit : afficher les informations du produit ainsi qu’un bouton permettant l’ajout au panier, avec le choix de la quantité (lors de l’ajout d’un produit au panier, si celui-ci est déjà présent il faudra mettre à jour sa quantité, et non pas le dupliquer).
+ - [x] Page de détails d’un produit : afficher les informations du produit ainsi qu’un bouton permettant l’ajout au panier, avec le choix de la quantité (lors de l’ajout d’un produit au panier, si celui-ci est déjà présent il faudra mettre à jour sa quantité, et non pas le dupliquer).
  - [x] Page du panier : détailler le contenu du panier, afficher son montant total et un bouton permettant de vider le panier.
  - [x] Sur toutes les pages : afficher le nombre d’articles présents dans le panier dans un encart dédié.
 

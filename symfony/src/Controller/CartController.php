@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Product;
 use App\Repository\ProductRepository;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -41,11 +42,16 @@ class CartController extends AbstractController
         return $this->redirectToRoute('app_cart');
     }
 
-    #[Route('/cart/add/{id}/{quantity}', name: 'app_cart_add')]
-    public function add(Product $product, SessionInterface $session, $quantity = 0)
+    #[Route('/cart/add/{id}/{quantity}', name: 'app_cart_add', methods: ['GET', 'POST'])]
+    public function add(Request $request, Product $product, SessionInterface $session, $quantity = 0)
     {
         $cart = $session->get('cart', []);
         $id = $product->getId();
+
+        if ($request->isMethod("GET")){
+            if ($request->query->get('quantity') != 0)
+                $quantity = $request->query->get('quantity');
+        }
 
         if (!empty($cart[$id])) $cart[$id] = $cart[$id] + $quantity;
         else $cart[$id] = $quantity;
@@ -79,8 +85,7 @@ class CartController extends AbstractController
         $cart = $session->get('cart', []);
         $id = $product->getId();
 
-        if (!empty($cart[$id]))
-            unset($cart[$id]);
+        unset($cart[$id]);
 
         $session->set('cart', $cart);
 
