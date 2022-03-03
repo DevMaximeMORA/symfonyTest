@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Product{% endblock %}
+
+{% block body %}
+<div class="container p-5">
+    <a class="btn btn-danger mb-5" href="{{ path('app_home') }}">Retour</a>
+    <h1>{{ product.name }}</h1>
+    <p>{{ product.description }}</p>
+    <h4>{{product.price}} €</h4>
+
+    <a class="btn btn-success" href="{{ path('app_cart_add', {'id': product.id, quantity: 1}) }}">Ajouter au panier</a>
+
+<!-- <a href="{{ path('app_product_edit', {'id': product.id}) }}">edit</a> -->
+
+<!-- {{ include('product/_delete_form.html.twig') }} -->
+</div>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Tout les produits{% endblock %}
+
+{% block body %}
+<div class="container p-5">
+    <h1>Liste des produits</h1>
+        <div class="pt-5 row d-flex justify-content-between">
+        {% for product in products %}
+        <div class="col-4 card text-white bg-secondary mb-3" style="max-width: 30%;">
+            <div class="card-header">{{ product.name }}</div>
+            <div class="card-body">
+              <a class="btn btn-primary" href="{{ path('app_product_show', {'id': product.id}) }}">Voir la fiche</a>
+              <a class="btn btn-success" href="{{ path('app_cart_add', {'id': product.id, quantity: 1}) }}">Ajouter au panier</a>
+            </div>
+        </div>
+        {% else %}
+            <div class="col-12">
+                <p>Aucun produit.</p>
+            </div>
+        {% endfor %}
+        <div class="text-center">
+        <a class="btn btn-warning" href="{{ path('app_cart') }}">{{cart_quantity}} article dans le panier ({{cart_price}} €)</a>
+        </div>
+        </div>
+</div>
+{% endblock %}
