@@ -1,2 +1,2 @@
-
 infra/logs/nginx/access.log
+infra/logs/nginx/error.log
