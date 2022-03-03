@@ -3,7 +3,7 @@ Application ***_symfony test_***
 
 ## Comment l'installer :
 - Clonez le projet `git clone git@github.com:DevMaximeMORA/symfonyTest.git`
-- Exécutez le script `install.sh` à la racine du projet et l'application s'ouvrira
+- Exécutez le script `install.sh` à la racine du projet et l'application s'ouvrira en local [`http://127.0.0.1`](http://127.0.0.1)
 
 ## Comment exporter les produits en csv :
 - `cd infra && docker-compose run php php bin/console app:export_products csv && cd ..`
