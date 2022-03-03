@@ -6,8 +6,8 @@ Application ***_symfony test_***
 - Exécuter le script `install.sh` à la racine du projet et l'application s'ouvrira
 
 ## Comment exporter les produits en csv :
-`cd infra && docker-compose run php php bin/console app:export_products csv && cd ..`
-Ou executer le script `export.sh`
+- `cd infra && docker-compose run php php bin/console app:export_products csv && cd ..`
+- Ou executer le script `export.sh`
 
 ### Indications
 - [x] L’application propose 12 produits au total.
