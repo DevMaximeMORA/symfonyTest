@@ -25,10 +25,15 @@ Application ***_symfony test_***
 ### Fonctionnaliés avancées : 
    - [x] Fournir une configuration Docker / Docker Compose pour faire tourner le projet
    - [ ] Installer un espace d'administration permettant de gérer les produits (easyadmin)
-   - [ ] Sécuriser cet espace d’administration (utilisateur “admin” avec pour mot de passe “password” de type in_memory)
+   - [ ] Produit : ajouter une photo visible sur les pages d’accueil et de détails
+   - [x] Produit : ajouter un slug qui servira à afficher la page de détails
+   - [x] Sécuriser cet espace d’administration (utilisateur “admin” avec pour mot de passe “password” de type in_memory) `=> Users stockes dans la BDD avec hash du passsword`
    - [x] Produit : ajouter un slug qui servira à afficher la page de détails
    - [x] Page panier : pouvoir modifier les quantités
    - [x] Page panier : pouvoir supprimer un produit
+   - [ ] Proposer un point d’API renvoyant l’intégralité des produits au format JSON
    - [x] Proposer un export au format CSV de l’intégralité des produits depuis une commande console dédiée
+   - [ ] Permettre au visiteur de choisir la langue du site : fr ou en (les produits et les urls ne sont pas à traduire, seule l’interface est à adapter)
+   - [ ] Tests plus complets
 
 **Test réalisé par : MAXIME MORA**

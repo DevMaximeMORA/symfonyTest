@@ -19,11 +19,14 @@ class HomeController extends AbstractController
         $totalPrice = 0;
 
         foreach($cart as $id => $quantity){
-            dump($id);
             $product = $productRepository->find($id);
-            dump($product);
-            $totalQuantity += $quantity;
-            $totalPrice += ($product->getPrice() * $quantity);
+            if ($product){
+                $totalQuantity += $quantity;
+                $totalPrice += ($product->getPrice() * $quantity);
+            } else {
+                unset($cart[$id]);
+                $session->set('cart', $cart);
+            }
         }
 
         return $this->render('home/index.html.twig', [

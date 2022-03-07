@@ -1,2 +1,3 @@
 infra/logs/*
 symfony/csv_exports/products/*
+infra/logs/nginx/access.log

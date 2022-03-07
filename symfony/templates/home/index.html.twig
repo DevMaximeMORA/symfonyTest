@@ -10,7 +10,7 @@
         <div class="col-4 card text-white bg-secondary mb-3" style="max-width: 30%;">
             <div class="card-header">{{ product.name }}</div>
             <div class="card-body">
-              <a class="btn btn-primary" href="{{ path('app_product_show', {'id': product.id}) }}">Voir la fiche</a>
+              <a class="btn btn-primary" href="{{ path('app_product_show', {'slug': product.slug}) }}">Voir la fiche</a>
               <a class="btn btn-success" href="{{ path('app_cart_add', {'id': product.id, quantity: 1}) }}">Ajouter au panier</a>
             </div>
         </div>
@@ -23,5 +23,15 @@
         <a class="btn btn-warning" href="{{ path('app_cart') }}">{{cart_quantity}} article dans le panier ({{cart_price}} €)</a>
         </div>
         </div>
+</div>
+<div class="container p-5 text-center">
+    {% if app.user %}
+        {% if is_granted('ROLE_ADMIN') %}
+            <a class="btn btn-secondary" href="#admin">Administration</a>
+        {% endif %}
+        <a class="btn btn-danger" href="{{ path('app_logout') }}">Deconnexion</a>
+    {% else %}
+        <a class="btn btn-primary" href="{{ path('app_login') }}">Connexion</a>
+    {% endif %}
 </div>
 {% endblock %}
